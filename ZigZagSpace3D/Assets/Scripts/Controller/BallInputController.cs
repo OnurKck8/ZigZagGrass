@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallInputController : MonoBehaviour
+{
+    public Vector3 ballDirection;
+
+    void Start()
+    {
+        ballDirection = Vector3.left;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        HandleBallInpute();
+    }
+
+    private void HandleBallInpute()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            ChangeBallDirection();
+        }
+    }
+
+    private void ChangeBallDirection()
+    {
+        if(ballDirection.x == -1)
+        {
+            ballDirection = Vector3.forward;
+        }
+        else
+        {
+            ballDirection = Vector3.left;
+        }
+    }
+}
