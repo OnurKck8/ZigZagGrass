@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class GroundDatas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GroundFallController _groundFallController;
 
-    // Update is called once per frame
-    void Update()
+    public void SetGroundRigidbodyValues()
     {
-        
+        StartCoroutine(_groundFallController.SetRigidbodyValue());
     }
 }

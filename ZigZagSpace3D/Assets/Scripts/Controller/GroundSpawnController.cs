@@ -39,5 +39,17 @@ public class GroundSpawnController : MonoBehaviour
             _newGroundObject = Instantiate(_groundPrefab, new Vector3(_lastGroundObject.transform.position.x , _lastGroundObject.transform.position.y, _lastGroundObject.transform.position.z+1f), Quaternion.identity);
             _lastGroundObject = _newGroundObject;
         }
+
+
+        int _pickUp = Random.Range(0, 10);
+
+        if(_pickUp==0)
+        {
+            _lastGroundObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else
+        {
+            _lastGroundObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
