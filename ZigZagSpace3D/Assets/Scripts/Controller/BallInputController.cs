@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallInputController : MonoBehaviour
 {
     public Vector3 ballDirection;
+   
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class BallInputController : MonoBehaviour
     void Update()
     {
         HandleBallInpute();
+
     }
 
     private void HandleBallInpute()
