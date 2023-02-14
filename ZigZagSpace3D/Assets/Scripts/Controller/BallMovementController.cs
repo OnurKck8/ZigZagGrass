@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BallMovementController : MonoBehaviour
 {
-    [SerializeField] private BallDatas _ballDatas;
+    private BallDatas _ballDatas;
 
     [SerializeField] private float _ballMoveSpeed;
+
+    private void Awake()
+    {
+        _ballDatas = GetComponent<BallDatas>();
+    }
 
     private void Update()
     {

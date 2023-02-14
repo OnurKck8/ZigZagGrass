@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BallDatas : MonoBehaviour
 {
-    [SerializeField] private BallInputController _ballInputController;
-    
+    private BallInputController _ballInputController;
+
+    private void Awake()
+    {
+        _ballInputController = GetComponent<BallInputController>();
+    }
+
     public Vector3 GetBallDirection()
     {
         return _ballInputController.ballDirection; 

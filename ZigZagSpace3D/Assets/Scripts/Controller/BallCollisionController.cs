@@ -23,7 +23,4 @@ public class BallCollisionController : MonoBehaviour
         }
             
     }
-
- 
-  
 }

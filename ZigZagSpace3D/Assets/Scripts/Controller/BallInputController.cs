@@ -11,7 +11,6 @@ public class BallInputController : MonoBehaviour
         ballDirection = Vector3.left;
     }
 
-    // Update is called once per frame
     void Update()
     {
         HandleBallInpute();
