@@ -22,7 +22,7 @@ public class BallMovementController : MonoBehaviour
     private void SetBallMovement()
     {
         transform.position += _ballDatas.GetBallDirection() * _ballMoveSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180, 0), _turnSpeed * Time.deltaTime);
-    }
+        transform.Rotate(Vector3.up * _turnSpeed * Time.deltaTime);
 
+    }
 }
