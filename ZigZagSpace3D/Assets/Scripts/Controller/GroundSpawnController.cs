@@ -41,7 +41,7 @@ public class GroundSpawnController : MonoBehaviour
         }
 
 
-        int _pickUp = Random.Range(0, 10);
+        int _pickUp = Random.Range(0, 10);//0-1
 
         if(_pickUp==0)
         {
