@@ -6,7 +6,7 @@ public class GroundSpawnController : MonoBehaviour
 {
     public GameObject _lastGroundObject;
 
-    [SerializeField] private GameObject _groundPrefab;
+    [SerializeField] public GameObject _groundPrefab;
 
     private GameObject _newGroundObject;
 
@@ -41,15 +41,17 @@ public class GroundSpawnController : MonoBehaviour
         }
 
 
-        int _pickUp = Random.Range(0, 10);//0-1
+        int _pickUp = Random.Range(0,2);//0-1
 
-        if(_pickUp==0)
+        if (_pickUp == 0)
         {
-            _lastGroundObject.transform.GetChild(0).gameObject.SetActive(true);
+            _groundPrefab.transform.GetChild(0).gameObject.SetActive(true);
+            _lastGroundObject = _newGroundObject;
         }
         else
         {
-            _lastGroundObject.transform.GetChild(0).gameObject.SetActive(false);
+            _groundPrefab.transform.GetChild(0).gameObject.SetActive(false);
+            _lastGroundObject = _newGroundObject;
         }
     }
 }

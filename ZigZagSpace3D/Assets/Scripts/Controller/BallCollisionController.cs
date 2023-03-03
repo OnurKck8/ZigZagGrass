@@ -7,10 +7,12 @@ public class BallCollisionController : MonoBehaviour
     public GameObject ps;
     public AudioSource _sound;
     public GameObject _gameOverPanel;
-
+    GroundSpawnController _groundSpawnController;
     private void Awake()
     {
         _gameOverPanel.SetActive(false);
+
+        _groundSpawnController = FindObjectOfType<GroundSpawnController>().GetComponent<GroundSpawnController>();
     }
 
     private void Update()
@@ -27,8 +29,8 @@ public class BallCollisionController : MonoBehaviour
         {
             Instantiate(ps, transform.position, Quaternion.identity);
             _sound.Play();
+            other.gameObject.SetActive(false);
 
-            Destroy(other.gameObject);
         }
     }
 
